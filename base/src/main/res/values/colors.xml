@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="base_colorTheme">#FA7C6B</color>
+    <color name="base_activity_background">#F8F8F9</color>
+    <color name="base_color_line">#E1E5E1</color>
+
+    <color name="base_white">#FFF</color>
+    <color name="base_black">#000</color>
+</resources>

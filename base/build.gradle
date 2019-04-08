@@ -1,0 +1,88 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+project.ext.setLibDefaultConfig project
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api "com.android.support:appcompat-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:support-annotations:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:recyclerview-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:cardview-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:support-v4:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:design:$rootProject.androidSupportSdkVersion"
+    //测试相关
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.testRuunerVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    //权限申请
+    api "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxPermissionVersion"
+    //rxJava
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+    //eventBus事件总线
+    api "org.greenrobot:eventbus:$rootProject.eventbusVersion"
+    //retrofit
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+
+    // Android组件库，里面定义了例如RxAppCompatActivity、RxFragment之类的Android组件
+    // 内部引用了基础库和Android库，如果使用此库则无需再重复引用
+    //作用：可以通过绑定生命周期的方式，来解决内存泄漏的问题。
+    api "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.rxLifeCycleVersion"
+    api "com.trello.rxlifecycle2:rxlifecycle:$rootProject.rxLifeCycleVersion"
+    //okhttp拦截器
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.logInterceptor"
+    //一款强大灵活的RceycleViewAdapter  需要引入 maven { url "https://jitpack.io" }
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.baseAdapterVersion"
+    //log打印格式化
+    api "com.orhanobut:logger:$rootProject.loggerVersion"
+    //二维码扫描
+    api "cn.yipianfengye.android:zxing-library:$rootProject.zxingVersion"
+    //图片加载
+    api "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    //一款强大的下拉刷新开源库
+    api "in.srain.cube:ultra-ptr:$rootProject.pullRefreshVersion"
+    //依赖注入框架,
+    api "com.google.dagger:dagger:$rootProject.daggerVersion"
+    //multidex
+    api "com.android.support:multidex:$rootProject.multidexVersion"
+    //crash监听报告
+    api "com.tencent.bugly:crashreport:$rootProject.crashreportVersion"
+    //butterknife
+    api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    //组件化路由框架
+    api "com.alibaba:arouter-api:$rootProject.aRouterVersion"
+    //图片轮播控件
+    api "com.youth.banner:banner:$rootProject.bannerVersion"
+    //自定义Tablayout
+    api "com.androidkun:XTabLayout:$rootProject.tabLayoutVersion"
+    //时间选择器
+    api "com.contrarywind:Android-PickerView:$rootProject.pickerViewVersion"
+    //圆形ImageView
+    api "de.hdodenhof:circleimageview:$rootProject.circleImageviewVersion"
+    //阴影控件
+    api "com.loopeer.lib:shadow:$rootProject.shadowVersion"
+    //cardView自定义
+    api "io.github.meetsl:SCardView:$rootProject.SCardVersionVersion"
+    //今日头条屏幕适配优化方案
+    api "me.jessyan:autosize:$rootProject.autosizeVersion"
+}

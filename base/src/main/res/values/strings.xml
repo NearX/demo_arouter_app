@@ -1,0 +1,11 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="base_loading_net">加载中...</string>
+    <string name="base_net_connect_error">网络连接失败，请检查网络后重试</string>
+    <string name="base_login_tips">登录失效，请登录</string>
+    <string name="base_app_update_title">版本更新</string>
+    <string name="base_version_old_version">旧版本:</string>
+    <string name="base_verification_code_get">获取验证码</string>
+    <string name="base_verification_code_get_success">获取验证码成功</string>
+    <string name="base_verification_code_get_sub">已发送(<xliff:g id="num">%1$1d</xliff:g>s)</string>
+</resources>
+

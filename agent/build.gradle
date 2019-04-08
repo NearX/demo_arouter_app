@@ -1,0 +1,28 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+if(project.ext.isAgentDebug){//如果处于调试模式，则此模块设置为app模式
+    project.ext.setAppDefaultConfig project
+}else {
+    project.ext.setLibDefaultConfig project
+}
+
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':project_base')
+}

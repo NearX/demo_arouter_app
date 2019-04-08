@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="project_base_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/base_black</item>
+        <item name="colorPrimaryDark">@color/base_black</item>
+        <item name="colorAccent">@color/base_colorTheme</item>
+        <item name="android:windowBackground">@color/base_activity_background</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="project_base_whiteTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/base_white</item>
+        <item name="colorPrimaryDark">@color/base_white</item>
+        <item name="colorAccent">@color/base_colorTheme</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="project_base_common_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@drawable/base_shape_dialog_bg</item><!--背景透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
+
+    <style name="project_base_update_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
+
+    <style name="project_base_img_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/base_black</item><!--背景透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
+    <!--半透明dialog-->
+    <style name="project_base_translucent_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+    </style>
+    <!--横向line样式-->
+    <style name="project_base_line_h">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_dimen_0_5</item>
+        <item name="android:background">@color/project_base_color_line</item>
+    </style>
+
+    <!--竖向line样式-->
+    <style name="project_base_line_v">
+        <item name="android:layout_width">@dimen/base_dimen_0_5</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/project_base_color_line</item>
+    </style>
+
+    <style name="project_base_btn" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/base_white</item>
+        <item name="android:layout_height">@dimen/base_dimen_40</item>
+        <item name="android:textSize">@dimen/base_text_size_14</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- 输入框样式-->
+    <style name="project_base_edit_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_dimen_44</item>
+        <item name="android:textSize">@dimen/base_text_size_14</item>
+        <item name="android:textColor">@color/project_base_color_text_3</item>
+        <item name="android:textColorHint">@color/project_base_color_text_6</item>
+        <item name="android:background">@drawable/project_base_shape_edit_bg_focus_dark</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <!-- 选择框统一样式-->
+    <style name="project_base_select_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/base_dimen_40</item>
+        <item name="android:textSize">@dimen/base_text_size_16</item>
+        <item name="android:textColor">@color/project_base_color_text_3</item>
+        <item name="android:textColorHint">@color/project_base_color_text_6</item>
+        <item name="android:background">@drawable/project_base_shape_edit_bg</item>
+        <item name="android:layout_marginLeft">@dimen/base_dimen_14</item>
+        <item name="android:layout_marginRight">@dimen/base_dimen_14</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:drawableRight">@mipmap/ic_more_black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="project_base_text_black_common1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/project_base_color_text_3</item>
+        <item name="android:textSize">@dimen/base_text_size_14</item>
+    </style>
+</resources>

@@ -1,0 +1,93 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+project.ext.setAppDefaultConfig project
+
+
+android {
+    defaultConfig {
+        applicationId "com.ybkj.moudledemo"
+        versionCode 1
+        versionName "1.0"
+        flavorDimensions "18"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    signingConfigs {
+        signing {
+            keyAlias 'qmkj_app'
+            keyPassword 'qmkj@0622.'
+            storeFile file('../qmkj.jks')
+            storePassword 'qmkj@0622.'
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            debuggable false
+            /** 让安装包的资源按4字节对齐，减少应用在运行时的n内存消耗*/
+            zipAlignEnabled true
+            /** 打包时是否删除无用的资源,慎用，回引起不必要的麻烦*/
+            shrinkResources true
+            /** 控制是否运行混淆*/
+            minifyEnabled true
+            /**添加多 dex分包支持*/
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", "模块化demo"
+            signingConfig signingConfigs.signing
+            android.applicationVariants.all {
+                variant ->
+                    variant.outputs.all {
+                        outputFileName = "moudle_${variant.productFlavors[0].name}_V${defaultConfig.versionName}_${releaseTime()}.apk"
+                    }
+            }
+        }
+
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            debuggable true
+            zipAlignEnabled true //zip优化
+            signingConfig signingConfigs.signing
+            resValue "string", "app_name", "模块化demo_debug"
+        }
+    }
+    // 多渠道/多环境 的不同配置
+    productFlavors {
+        online {
+            //远程服务器类型(1:正式服；2：外网测试服；3：本地测试服)
+            buildConfigField "int", "SERVER_TYPE", "1"
+            //服务器地址，此值会在Constants.java里面引用
+            buildConfigField "String", "SERVER_ADDRESS", "\"http://www.mistre.com\""
+        }
+        remoteTest {
+            //远程服务器类型(1:正式服；2：外网测试服；3：本地测试服)
+            buildConfigField "int", "SERVER_TYPE", "2"
+            buildConfigField "String", "SERVER_ADDRESS", "\"http://47.99.92.135:8085\""
+        }
+        localTest {
+            //远程服务器类型(1:正式服；2：外网测试服；3：本地测试服)
+            buildConfigField "int", "SERVER_TYPE", "3"
+            buildConfigField "String", "SERVER_ADDRESS", "\"http://192.168.4.103:18083\""
+        }
+
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd")
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    if(!project.ext.isAuthDebug){//如果Auth模块不处于调试模式，将其依赖到此工程里面来
+        api project(':auth')
+    }
+
+    if(!project.ext.isAgentDebug){//如果agent模块不处于调试模式，将其依赖到此工程里面来
+        api project(':agent')
+    }
+}

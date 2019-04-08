@@ -1,0 +1,54 @@
+project.ext {
+    applicationId = "com.ybkj.moudledemo"
+    isAuthDebug=false//Auth模块是否是调试模式
+    isAgentDebug=false//Agent模块是否是调试模式
+
+    setAppDefaultConfig = {
+        extension ->
+            extension.apply plugin: 'com.android.application'
+            extension.apply plugin: 'com.jakewharton.butterknife'
+            extension.description "app"
+            setAndroidConfig extension.android
+            setDependencies extension.dependencies
+    }
+
+    setLibDefaultConfig = {
+        extension ->
+            extension.apply plugin: 'com.android.library'
+            extension.apply plugin: 'com.jakewharton.butterknife'
+            extension.description "lib"
+            setAndroidConfig extension.android
+            setDependencies extension.dependencies
+    }
+
+    setAndroidConfig = {
+        extension ->
+            extension.compileSdkVersion 27
+            extension.defaultConfig {
+                minSdkVersion 19
+                targetSdkVersion 27
+                multiDexEnabled true
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [ moduleName : extension.project.getName() ]
+                    }
+                }
+            }
+            extension.compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+
+            extension.resourcePrefix extension.project.getName()
+    }
+
+    //设置依赖
+    setDependencies = {
+        extension ->
+            extension.api fileTree(dir: 'libs', include: ['*.jar'])
+            extension.annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+            extension.annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+            extension.annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
+    }
+}
+

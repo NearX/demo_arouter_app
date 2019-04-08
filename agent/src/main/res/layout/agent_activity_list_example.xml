@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/project_base_color_background1">
+
+    <com.ybkj.project_base.ui.view.MyActionBar
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="列表示例" />
+
+    <com.ybkj.project_base.ui.view.refreshlayout.XRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/action_bar">
+
+        <com.ybkj.base.ui.view.recyclerview.XRecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.ybkj.base.ui.view.recyclerview.XRecyclerView>
+
+    </com.ybkj.project_base.ui.view.refreshlayout.XRefreshLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="project_base_loading_net">请求中...</string>
+    <string name="project_base_net_break">网络已断开</string>
+    <string name="project_base_refresh">刷新</string>
+    <string name="project_base_more">更多</string>
+    <string name="project_base_back">返回</string>
+    <string name="project_base_confirm">确定</string>
+    <string name="project_base_cancel">取消</string>
+    <string name="project_base_save">保存</string>
+    <string name="project_base_editor">编辑</string>
+    <string name="project_base_delete">删除</string>
+    <string name="project_base_delete_success">删除成功</string>
+    <string name="project_base_details">详情</string>
+    <string name="project_base_submit">提交</string>
+    <string name="project_base_submit_success">提交成功</string>
+    <string name="project_base_last_btn">上一步</string>
+    <string name="project_base_next_btn">下一步</string>
+    <string name="project_base_request_storage_permission_notice">
+        为了保证您正常地使用APP,当我们获取您的存储空间权限时，请点击允许，拒绝后APP将无法正常运行。
+    </string>
+    <string name="project_base_request_camera_permission_notice">
+        为了保证您正常地使用APP,当我们获取您的拍摄照片和录制视频权限时，请点击允许，拒绝后APP将无法正常运行。
+    </string>
+    <string name="project_base_exit">退出</string>
+    <string name="project_base_money_unit_cn">¥</string>
+    <string name="project_base_tips_tittle">温馨提示</string>
+    <string name="project_base_action_success">操作成功</string>
+    <string name="project_base_sure">确定</string>
+    <string name="project_base_bind_bill_submit_success">提交成功</string>
+    <string name="project_base_select">请选择</string>
+</resources>
+

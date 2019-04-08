@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ybkj.base.ui.view.MaxHeightLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/base_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/base_dimen_40"
+    app:maxHeight="400dp">
+
+    <include layout="@layout/project_base_include_bottom_dialog_head" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/deliver_select_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never" />
+
+
+</com.ybkj.base.ui.view.MaxHeightLinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyActionBar">
+        <attr name="titleColor" format="color|integer" />
+        <attr name="imageLeft" format="reference" />
+        <attr name="imageRight" format="reference" />
+        <attr name="actionBarColor" format="color|integer" />
+        <attr name="title" format="string" />
+        <attr name="textLeft" format="string" />
+        <attr name="textRight" format="string" />
+        <attr name="leftTextColor" format="color|integer" />
+        <attr name="rightTextColor" format="color|integer" />
+        <attr name="hideBottomLine" format="boolean" />
+        <attr name="canBack" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

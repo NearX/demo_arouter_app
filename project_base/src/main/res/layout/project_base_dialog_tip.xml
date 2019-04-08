@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/base_shape_dialog_bg"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/base_dimen_16">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/base_dimen_16"
+        android:layout_marginRight="@dimen/base_dimen_16"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/project_base_color_text_3"
+        android:textSize="@dimen/base_text_size_16"
+        android:visibility="visible"
+        tools:text="message" />
+
+    <TextView
+        android:id="@+id/content_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/base_dimen_16"
+        android:layout_marginLeft="@dimen/base_dimen_16"
+        android:layout_marginRight="@dimen/base_dimen_16"
+        android:layout_marginTop="@dimen/base_dimen_20"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/base_dimen_6"
+        android:textColor="@color/project_base_color_text_6"
+        android:textSize="@dimen/base_text_size_14"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/button_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dimen_44"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/negative_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="@string/project_base_cancel"
+            android:textColor="@color/project_base_color_text_6"
+            android:textSize="@dimen/base_text_size_14" />
+
+        <Button
+            android:id="@+id/positive_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/project_base_confirm"
+            android:textColor="@color/project_base_color_theme"
+            android:textSize="@dimen/base_text_size_14" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/positive_half_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/base_dimen_0_5"
+        android:layout_marginTop="@dimen/base_dimen_30"
+        android:text="@string/project_base_confirm"
+        android:textColor="@color/project_base_color_theme"
+        android:textSize="@dimen/base_text_size_14"
+        android:visibility="gone" />
+
+</LinearLayout>

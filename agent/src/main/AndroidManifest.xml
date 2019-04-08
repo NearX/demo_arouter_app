@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ybkj.agent">
+
+    <application>
+        <activity
+            android:name=".page.activity.ListExampleActivity"
+            android:theme="@style/project_base_whiteTheme" />
+    </application>
+</manifest>

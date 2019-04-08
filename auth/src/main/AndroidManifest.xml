@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ybkj.auth">
+
+    <application>
+        <activity android:name="com.ybkj.auth.page.activity.LoginActivity" />
+    </application>
+</manifest>
